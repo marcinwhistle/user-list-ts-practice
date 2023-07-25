@@ -7,12 +7,17 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "i": "^0.3.7",
     "inquirer": "8.2.4",
     "nodemon": "2.0.20",
     "ts-node": "8.10.2",
+    "type": "^2.7.2",
     "typescript": "^5.1.6"
   },
   "scripts": {
-    "watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+    "watch": "nodemon"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.4"
   }
 }
