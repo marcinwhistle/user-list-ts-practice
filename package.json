@@ -1,0 +1,9 @@
+{
+  "name": "Marcin",
+  "version": "1.0.0",
+  "description": "Console app for user list",
+  "main": "index.js",
+  "author": "Marcin Gwizdek <programowanie.kodilla@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
