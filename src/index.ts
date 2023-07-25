@@ -71,6 +71,26 @@ const startApp = async () => {
         console.table(this.data)
       }
     }
+
+    add(newUser: User){
+      if (typeof newUser.age !== 'number' || newUser.age <= 0 || newUser.name.trim().length === 0){
+        Message.showColorized(MessageVariant.Error, 'Wrong data!');
+      } else {
+        this.data.push(newUser);
+        Message.showColorized(MessageVariant.Success, 'User has been successfully added')
+      }
+    }
+    remove(userName: string){
+      const index = this.data.findIndex((user) => user.name === userName);
+
+      if (index !== -1) {
+        this.data.splice(index, 1);
+        Message.showColorized(MessageVariant.Success, 'User deleted!')
+      } else {
+        Message.showColorized(MessageVariant.Error, 'User not found...')
+      }
+    }
+
   }
 
 inquirer.prompt([{
