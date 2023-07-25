@@ -18,6 +18,11 @@ type InquirerAnswers = {
   action: Action
 };
 
+interface User {
+  name: string;
+  age: number;
+}
+
 const startApp = async () => {
 
 
@@ -33,15 +38,12 @@ const startApp = async () => {
     }
     capitalize(){
       this.content = this.content.charAt(0).toUpperCase() + this.content.slice(1).toLowerCase();
-
     }
     toUpperCase(){
       this.content = this.content.toUpperCase();
-
     }
     toLowerCase(){
       this.content = this.content.toLowerCase();
-
     }
     static showColorized(variant: MessageVariant, text: string){
       switch(variant){
@@ -57,17 +59,19 @@ const startApp = async () => {
       }
     }
   }
-  const msg = new Message("heLlo world!");
-msg.show(); // "heLlo world!"
-msg.capitalize();
-msg.show(); // "Hello world!"
-msg.toLowerCase();
-msg.show(); // "hello world!"
-msg.toUpperCase();
-msg.show(); // "HELLO WORLD!"
-Message.showColorized(MessageVariant.Success, "Test"); // √ "Test"
-Message.showColorized(MessageVariant.Error, "Test 2"); // "x Test 2"
-Message.showColorized(MessageVariant.Info, "Test 3"); // ℹ "Test 3"
+
+  class UsersData {
+    data: User[] = []
+
+    showAll(){
+      if(this.data.length === 0){
+        Message.showColorized(MessageVariant.Info, 'No data...');
+      } else {
+        console.log('\u{2139} Users data')
+        console.table(this.data)
+      }
+    }
+  }
 
 inquirer.prompt([{
   name: 'action',
@@ -80,4 +84,5 @@ inquirer.prompt([{
     return;
 });
 }
+
 startApp();
