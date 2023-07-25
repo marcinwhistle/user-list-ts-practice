@@ -1,9 +1,18 @@
 {
-  "name": "Marcin",
+  "name": "user-list-ts-practice",
   "version": "1.0.0",
   "description": "Console app for user list",
   "main": "index.js",
   "author": "Marcin Gwizdek <programowanie.kodilla@gmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "inquirer": "8.2.4",
+    "nodemon": "2.0.20",
+    "ts-node": "8.10.2",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+  }
 }
