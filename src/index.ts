@@ -136,7 +136,6 @@ interface User {
           Message.showColorized(MessageVariant.Info, "Bye bye!");
           return;
       }
-
-      startApp();
     });
   }
+  startApp();
